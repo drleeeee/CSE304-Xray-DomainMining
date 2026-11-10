@@ -1,0 +1,23 @@
+seed: 42
+# Core dataset is the 2,809 original machine-marked BMPs, not the auxiliary jpg examples.
+image_subpath_hint: /test1/yolov3/
+use_deep: true
+n_group_bootstrap: 250
+overlay_gallery_limit: 18
+use_yolo: true
+use_resnet: true
+use_dinov2: true
+batch_size: 12
+image_side: 224
+max_images: null
+cache_features: true
+n_splits: 3
+# Labels cover Units 1-3 in the 2026-11-10 reviews; F includes heterogeneous exception types.
+allowed_labels: [T, F]
+# No automatic claim of true material identity or exhaustive object count.
+image_target: review_marking_adequacy
+
+# --with-yolo-roi enables candidate-level multi-scale frozen YOLO (slower).
+roi_yolo_side: 640
+# Domain image and annotation-level proxies run in the basic extraction phase.
+use_domain: true
